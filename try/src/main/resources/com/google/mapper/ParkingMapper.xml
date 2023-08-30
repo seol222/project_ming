@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.google.mapper.ParkingMapper">
+
+
+<select id="read" resultType="com.google.domain.ParkingVO">
+SELECT * FROM tbl_park WHERE mb_id=#{mb_id} AND mb_pw=#{mb_pw}
+</select>
+
+
+<insert id="insert">
+INSERT INTO tbl_park (car_number) VALUES(#{car_number})
+</insert>
+
+</mapper>

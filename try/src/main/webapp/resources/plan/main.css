@@ -1,0 +1,535 @@
+@import "reset.css";
+
+.container {
+  display: flex;
+  align-items: center;
+  height: auto;
+  width: auto;
+}
+
+nav {
+  height: 100vh;
+  width: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.55);
+  text-align: center;
+}
+
+nav .logo {
+  height: 30%;
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 4rem 2.5rem;
+  cursor: default;
+}
+
+nav .nav-item {
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu-item {
+  height: 6.5rem;
+  width: 10vh;
+  margin: 3rem 0;
+  background-color: rgba(0, 0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-item:hover {
+  background-color: white;
+  width: 10vw; 
+}
+
+.this-page {
+  background-color: rgb(46, 46, 46);
+  border-radius: 1.5rem;
+  padding: 1rem;
+}
+
+.menu-item i {
+  color: rgb(255, 254, 235);
+  font-size: 3rem;
+}
+
+.menu-text {
+  font-size: 1.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  width: 10vw;
+  color:rgb(0, 0, 0);
+  display: none;
+}
+
+.login {
+  font-size: 1.3rem;
+  margin: 1.5rem;
+}
+
+.login span {
+  margin: 0 1rem;
+  cursor: default;
+}
+
+.main {
+  width: 90%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calendar {
+  width: 96rem;
+  height: 76rem;
+  margin: 2.5rem;
+  background-color: rgba(0, 0, 0, 0.55);
+  border: 3px solid #303030;
+  border-radius: 1.5rem;
+  font-weight: 1000;
+}
+
+.calendar-header {
+  display: flex;
+  font-size: 4rem;
+  justify-content: space-between;
+  align-items: center;
+  margin: 3rem 4rem;
+}
+
+.nav-btn {
+  color: rgb(255, 254, 235);
+  background-color: rgba(0, 0, 0, 0);
+  font-size: 3rem;
+  border: none;
+  font-family: 'Krub', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.days {
+  display: flex;
+  margin: 4rem 0;
+  padding: 0 4rem;
+}
+
+.day {
+  font-size: 2.6rem;
+  width: calc(100%/7);
+  text-align: center;
+  letter-spacing: 0.25rem;
+  cursor: default;
+}
+
+.day:nth-child(7n + 1),
+.date:nth-child(7n + 1) {
+  color: #651919;
+}
+
+.day:nth-child(7n),
+.date:nth-child(7n) {
+  color: #0c488f;
+}
+
+.dates {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 0 4rem;
+}
+
+.date {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: calc(100% / 7);
+  font-size: 2.6rem;
+  font-weight: 600;
+  padding: 0 0 6.7rem;
+  letter-spacing: 0.25rem;
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.other {
+  opacity: .3;
+}
+
+.today {
+  position: relative;
+  color: #fffb00;
+  z-index: 0;
+}
+
+.select::before {
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  z-index: -1;
+  display: block;
+  width: 0.8rem;
+  height: 0.8rem;
+  background-color: rgb(255, 254, 235);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  content: '';
+}
+
+.side {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+}
+
+.search-box {
+  width: 33rem;
+  height: 2.5rem;
+  border: none;
+  border-right:0.1rem solid black;
+}
+
+.search-btn {
+  width: 7rem;
+  height: 2.7rem;
+  border: none;
+  border-left:0.1rem solid black;
+  cursor: pointer;
+}
+
+.search input {
+  color: black;
+}
+
+.daily {
+  width: 40rem;
+  height: 37rem;
+  margin: 2.5rem 0;
+  background-color: rgba(0, 0, 0, 0.55);
+  border: 3px solid #303030;
+  border-radius: 1.5rem;
+}
+
+.side-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 3rem 3rem 1rem;
+}
+
+.side-title {
+  font-size: 3.2rem;
+  font-weight: 700;
+  cursor: default;
+}
+
+.side-btn {
+  font-size: 2.5rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 1.5rem;
+  padding: 0 1.5rem;
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  cursor: pointer;
+}
+
+.side-btn:hover {
+  transform: scale(1.2);
+}
+
+.list {
+  padding: 1rem 1rem 0 3rem;
+  font-size: 1.5rem;
+  overflow-y: scroll;
+  width: 85%;
+}
+
+.list::-webkit-scrollbar {
+  width: 1rem;
+}
+
+.list::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 1rem;
+}
+
+.list::-webkit-scrollbar-thumb {
+  background-color: white;
+  border-radius: 1rem;
+}
+
+.daily-list {
+  height: 25rem;
+}
+
+.new-list {
+  display: flex;
+  cursor: pointer;
+  margin: 0 0 2rem;
+}
+
+.new-list:hover {
+  background-color: rgba(255, 255, 255, 0.068);
+}
+
+.new-list::before {
+  content: "·";
+  color: #FF2929;
+  font-size: 6rem;
+  display: flex;
+  align-items: flex-end;
+}
+
+.new-list button {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  padding: 0 0 0 4rem;
+}
+
+.list-first {
+  margin: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.list-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0.5rem 0;
+}
+
+.title-bottom {
+  font-size: 1.5rem;
+  color: gray;
+}
+
+.bottom-item {
+  margin: 0 0.5rem;
+}
+
+.delete-btn {
+  color: rgb(185, 185, 185);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+li::marker {
+  color: #FF2929;
+  font-size: 2.5rem;
+}
+
+.plan {
+  width: 40rem;
+  height: 30rem;
+  background-color: rgba(0, 0, 0, 0.55);
+  border: 3px solid #303030;
+  border-radius: 1.5rem;
+}
+
+.plan-list {
+  height: 19rem;
+}
+
+.plan-input {
+  display: flex;
+  align-items: center;
+}
+
+.new-plan {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 0 1.5rem;
+  cursor: pointer;
+}
+
+.new-plan button {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+}
+
+.plan-checkbox {
+  background-color: rgba(0, 0, 0, 0);
+  width: 1.7rem;
+  height: 1.7rem;
+  border: solid 0.2rem white;
+  border-radius: 0.5rem;
+  cursor: default;
+}
+
+.plan-title {
+  font-size: 1.7rem;
+  padding: 0 1rem;
+  width: 25rem;
+}
+
+.daily-modal {
+  position: fixed;
+  top: 30%;
+  right: 10%;
+  background: #1E1E1E;
+  border: 0.4rem solid #494949;
+  border-radius: 0.3rem;
+}
+
+.daily-modal-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 40rem;
+  height: 29rem;
+}
+
+.daily-modal-grid {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 4fr;
+  justify-items: center;
+  align-items: center;
+  row-gap: 3rem;
+  column-gap: 1rem;
+  padding: 3rem 0 0;
+}
+
+.modal-detail {
+  width: 29rem;
+  height: 2rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-bottom: 0.2rem solid rgba(0, 0, 0, 0.6);
+  padding: 0.2rem 0.5rem;
+  font-size: 1.5rem;
+  letter-spacing: 0.2rem;
+  outline: none;
+}
+
+.modal-time input {
+  width: 13rem;
+}
+
+.modal-subject {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #bbbbbb;
+  cursor: default;
+}
+
+.mark {
+  margin: 0 0.5rem;
+}
+
+.color-sample {
+  display: flex;
+  width: 20rem;
+  justify-content: space-between;
+}
+
+.color-sample input[type=radio] {
+  display: none;
+}
+
+.color-sample input[type=radio] + label {
+  display: inline-block;
+  cursor: pointer;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+}
+
+.color-sample input[type=radio]:checked+label{
+  border: 0.15rem solid white;
+}
+
+.mark:hover {
+  border: 0.15rem solid white;
+}
+
+.color-red {
+  background-color: #FF2929;
+}
+
+.color-orange {
+  background-color: #FF8412;
+}
+
+.color-yellow {
+  background-color: #FFF629;
+}
+
+.color-green {
+  background-color: #87FF29;
+}
+
+.color-cyan {
+  background-color: #29BFFF;
+}
+
+.color-blue {
+  background-color: #294CFF;
+}
+
+.modal-btn button {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  margin: 2rem 2rem;
+  cursor: pointer;
+}
+
+.plan-modal {
+  position: fixed;
+  bottom: 20%;
+  right: 10%;
+  background: #1E1E1E;
+  border: 0.4rem solid #494949;
+  border-radius: 0.3rem;
+}
+
+.plan-modal-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 28rem;
+  height: 10rem;
+}
+
+.plan-modal-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  justify-items: center;
+  align-items: center;
+  margin: 2rem 0 0;
+}
+
+.plan-modal-grid input {
+  width: 16rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-bottom: 0.15rem solid rgba(0, 0, 0, 0.6);
+}
+
+.new-plan:hover {
+  background-color: rgba(255, 255, 255, 0.068);
+}

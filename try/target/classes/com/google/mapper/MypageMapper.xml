@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.google.mapper.MypageMapper">
+
+<select id="getmy" resultType="com.google.domain.MemberVO">
+SELECT * FROM book_member 
+WHERE mb_id = #{mb_id}
+</select>
+
+<update id="recreate">
+UPDATE book_member SET  mb_email = #{mb_email}, mb_phone= #{mb_phone}, mb_code= #{mb_code}, mb_addr= #{mb_addr} ,mb_extra= #{mb_extra}
+WHERE mb_id = #{mb_id}
+</update>
+
+</mapper>
